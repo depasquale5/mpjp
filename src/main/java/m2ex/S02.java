@@ -74,7 +74,7 @@ public class S02 {
         	score = 10;
         } else if ((distance > 1) && (distance <= 5)) {
         	score = 5;
-        } else {
+        } else if (distance < 10) {
         	score = 1;
         }
         return score;
