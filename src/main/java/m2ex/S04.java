@@ -9,8 +9,15 @@ public class S04 {
 	 * @return the sum of all the numbers, or zero
 	 */
 	public static long sum(int first, int last) {
-		// TODO
-		return 0;
+		long sum = 0;
+		if(first > last) {
+			return sum;
+		} else {
+			for(int i = first; i <= last; i++) {
+				sum += i;
+			}
+			return sum;
+		}
 	}
 
 	/**
@@ -21,8 +28,17 @@ public class S04 {
 	 * @return the sum of all the even numbers, or zero
 	 */
 	public static long evenSum(int first, int last) {
-		// TODO
-		return 0;
+		long sum = 0;
+		if(first > last) {
+			return sum;
+		} else {
+			for(int i = first; i <= last; i++) {
+				if(i % 2 == 0) {
+					sum += i;
+				}
+			}
+			return sum;
+		}
 	}
 
 	/**
@@ -32,10 +48,15 @@ public class S04 {
 	 * @param value
 	 * @return calculated square root
 	 */
-	public static double sqrt(double value) {
-	    // TODO
-	    return 0.0;
-	}
+//	public static double sqrt(double value) {	    
+//	    final double EPSILON = 0.001;
+//	    
+//	    
+//	    while(prev - succ > EPSILON) {
+// 	    	
+//	    } 	    
+//	    return succ;
+//	}
 
 	/**
      * Square root using Newton method
@@ -56,8 +77,16 @@ public class S04 {
 	 * @return factorial of input value, or zero
 	 */
 	public static long factorial(int value) {
-		// TODO
-		return 0;
+		if(value < 0) {
+			return 0;
+		} else {
+			long fact = 1;
+			int temp = value;
+			while(value != 0 && value != 1 && temp > 1) {
+				fact *= temp--;
+			}
+			return fact;
+		}		
 	}
 
 	/**
@@ -67,8 +96,13 @@ public class S04 {
 	 * @return the Fibonacci number of value, or zero
 	 */
 	public static long fibonacci(int value) {
-		// TODO
-		return 0;
+		if(value == 0) {
+			return 0;
+		} else if(value == 1) {
+			return 1;
+		} else {
+			return fibonacci(value - 1) + fibonacci(value - 2);
+		}
 	}
 
 	/**
@@ -78,9 +112,13 @@ public class S04 {
 	 * @return The multiplication table for value, when possible
 	 */
 	public static int[][] multiplicationTable(int value) {
-		int[][] result = new int[0][0];
+		int[][] result = new int[value][value];
 
-		// TODO
+		for(int i = 0; i < result.length; i++) {
+			for(int j = 0; j < result.length; j++) {
+				result[i][j] = (i + 1) * (j + 1);
+			}
+		}
 
 		return result;
 	}

@@ -8,8 +8,15 @@ public class S05 {
 	 * @return the input reversed
 	 */
 	public static String reverse(String s) {
-		// TODO
-		return "";
+		char[] current = s.toCharArray();
+		char[] reverse = new char[s.length()];
+		int j = current.length - 1;
+		
+		for(int i = 0; i < current.length; i++) {
+			reverse[i] = current[j];
+			j--;
+		}
+		return new String(reverse);
 	}
 
 	/**
@@ -19,8 +26,7 @@ public class S05 {
 	 * @return true if the parameter is a palindrome
 	 */
 	public static boolean isPalindrome(String s) {
-		// TODO
-		return false;
+		return s.equals(S05.reverse(s));
 	}
 
 	/**
@@ -30,10 +36,18 @@ public class S05 {
 	 * @return a string, same of input but without vowels
 	 */
 	public static String removeVowels(String s) {
-		// TODO
-
+		char[] current = s.toCharArray();
+		char[] withNoVowels = new char[s.length()];
+		int j = 0;
+		
+		for(int i = 0; i < current.length; i++) {
+			if(current[i] != 'a' && current[i] != 'e' && current[i] != 'i' && current[i] != 'o' && current[i] != 'u') {
+				withNoVowels[j] = current[i];
+				j++;
+			}
+		}
 	           
-		return "";
+		return new String(withNoVowels).trim();
 	}
 
 	/**

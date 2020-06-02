@@ -2,7 +2,6 @@ package m2ex;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -62,6 +61,13 @@ class S04Test {
 
         assertThat(actual, is(0L));
     }
+    
+//    @Test
+//    void sqrtFixedEpsilon() {
+//    	double actual = S04.sqrt(7.0);
+//    	
+//    	assertThat(actual, is(2.6457513));
+//    }
 
     @Test
     void factorialFour() {
@@ -79,7 +85,9 @@ class S04Test {
 
     @Test
     void fibonacci() {
-        fail("Not yet implemented");
+        long actual = S04.fibonacci(6);
+        
+        assertThat(actual, is(8L));
     }
 
     @Test
