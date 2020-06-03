@@ -48,15 +48,17 @@ public class S04 {
 	 * @param value
 	 * @return calculated square root
 	 */
-//	public static double sqrt(double value) {	    
-//	    final double EPSILON = 0.001;
-//	    
-//	    
-//	    while(prev - succ > EPSILON) {
-// 	    	
-//	    } 	    
-//	    return succ;
-//	}
+	public static double sqrt(double value) {	    
+	    final double EPSILON = 0.001;
+	    double prev = value;
+	    double succ = (prev / 2) + (value / (2 * prev));
+	    
+	    while(prev - succ > EPSILON) {
+ 	    	prev = succ;
+ 	    	succ = 0.5 * ( prev + value / prev);
+	    } 	    
+	    return succ;
+	}
 
 	/**
      * Square root using Newton method
@@ -66,8 +68,14 @@ public class S04 {
 	 * @return calculated square root
 	 */
     public static double sqrt(double value, double epsilon) {
-        // TODO
-        return 0.0;
+	    double prev = value;
+	    double succ = (prev / 2) + (value / (2 * prev));
+	    
+	    while(prev - succ > epsilon) {
+ 	    	prev = succ;
+ 	    	succ = 0.5 * ( prev + value / prev);
+	    } 	    
+	    return succ;
     }
 	
 	/**

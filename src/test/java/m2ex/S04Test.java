@@ -2,6 +2,7 @@ package m2ex;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -62,12 +63,19 @@ class S04Test {
         assertThat(actual, is(0L));
     }
     
-//    @Test
-//    void sqrtFixedEpsilon() {
-//    	double actual = S04.sqrt(7.0);
-//    	
-//    	assertThat(actual, is(2.6457513));
-//    }
+    @Test
+    void sqrtFixedEpsilon() {
+    	double actual = S04.sqrt(7.0);
+    	
+    	assertEquals(2.645, actual, 0.001);
+    }
+    
+    @Test
+    void sqrtEpsilon() {
+    	double actual = S04.sqrt(7.0, 0.1);
+    	
+    	assertEquals(2.645, actual, 0.001);
+    }
 
     @Test
     void factorialFour() {
