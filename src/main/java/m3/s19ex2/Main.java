@@ -8,8 +8,8 @@ public class Main {
         
         // ctor(int)
         
-        // cane x 1 giorno -> 10
-        // gatto           -> 6
+        // cane x 1 giorno -> 10 big -> 18
+        // gatto           -> 6  big -> 10
         
         // Pet[] = new Dog, Cat, ...
         
@@ -18,8 +18,9 @@ public class Main {
         // bob.housing() -> 30
         
         // for each -> calcolare housing complessivo = 36
+    	// housing complessivo = 3*10 + 5*6 + 18 + 10
         
-        Pet[] guests = { new Dog(3), new Cat(5), new Dog(1) };
+        Pet[] guests = { new Dog(3), new Cat(5), new Dog(1), new BigDog(1), new BigCat(1) };
         
         int total = 0;
         for(Pet guest: guests) {

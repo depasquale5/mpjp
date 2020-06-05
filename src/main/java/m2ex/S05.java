@@ -60,7 +60,15 @@ public class S05 {
 		// [1][0][0][0][1]
 	    // 43_210
 	    // 2
-		return 0;
+		int converted = 0;
+		char[] bin = s.toCharArray();
+		
+		for(int i = 0; i < bin.length; i++) {
+			if(bin[i] == '1') {
+				converted += Math.pow(2, i);
+			}
+		}
+		return converted;
 	}
 
 	/**
@@ -70,9 +78,13 @@ public class S05 {
 	 * @return a new array holding the same elements of input, in reversed order
 	 */
 	public static int[] reverse(int[] data) {
-		int[] result = new int[0];
-
-		// TODO
+		int[] result = new int[data.length];
+		int j = data.length - 1;
+		
+		for(int i = 0; i < data.length; i++) {
+			result[j] = data[i];
+			j--;
+		}
 
 		return result;
 	}
@@ -84,8 +96,12 @@ public class S05 {
 	 * @return the average
 	 */
 	public static double average(int[] data) {
-		// TODO
-		return 0;
+		int sum = 0;
+		
+		for(int i = 0; i < data.length; i++) {
+			sum += data[i];
+		}
+		return sum/data.length;
 	}
 
 	/**
@@ -95,7 +111,13 @@ public class S05 {
 	 * @return the largest value
 	 */
 	public static int max(int[] data) {
-		// TODO
-		return Integer.MIN_VALUE;
+		int max = data[0];
+		
+		for(int i = 1; i < data.length; i++) {
+			if(data[i] > max) {
+				max = data[i];
+			}
+		}
+		return max;
 	}
 }
